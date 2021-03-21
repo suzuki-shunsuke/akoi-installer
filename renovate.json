@@ -1,0 +1,11 @@
+{
+  "enabledManagers": ["regex"],
+  "automerge": true,
+  "regexManagers": [
+    {
+      "fileMatch": ["akoi-installer"],
+      "matchStrings": ["VERSION=${VERSION:-(?<currentValue>.*?)} # renovate: depName=(?<depName>.*?)"],
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
