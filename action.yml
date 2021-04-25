@@ -1,0 +1,17 @@
+name: 'Install akoi'
+description: 'Install suzuki-shunsuke/akoi'
+inputs:
+  version:
+    description: 'installed akoi version'
+    required: false
+    default: ""
+  path:
+    description: 'install path'
+    required: false
+    default: ""
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.version }}
+    - ${{ inputs.path }}
