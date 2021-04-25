@@ -12,6 +12,10 @@ GitHub Actions and Shell Script to install tools with [akoi](https://github.com/
 
 Please see [action.yml](action.yml)
 
+### Example usage
+
+Please see [example.yml](.github/workflows/example.yml)
+
 ## Shell Script
 
 ### Requirement
@@ -21,7 +25,7 @@ Please see [action.yml](action.yml)
 ### How to use
 
 ```console
-$ curl -sSfL https://raw.githubusercontent.com/suzuki-shunsuke/akoi-installer/v0.1.0-0/akoi-installer | sh
+$ curl -sSfL https://raw.githubusercontent.com/suzuki-shunsuke/akoi-installer/v0.1.0-1/akoi-installer | sh
 ```
 
 ### Parameters
@@ -30,7 +34,7 @@ $ curl -sSfL https://raw.githubusercontent.com/suzuki-shunsuke/akoi-installer/v0
 * INSTALL_PATH: install path where akoi is installed
 
 ```console
-$ curl -sSfL https://raw.githubusercontent.com/suzuki-shunsuke/akoi-installer/v0.1.0-0/akoi-installer | env VERSION=v2.2.1 INSTALL_PATH=bin/akoi sh
+$ curl -sSfL https://raw.githubusercontent.com/suzuki-shunsuke/akoi-installer/v0.1.0-1/akoi-installer | env VERSION=v2.2.1 INSTALL_PATH=bin/akoi sh
 ```
 
 ## LICENSE

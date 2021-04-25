@@ -1,0 +1,36 @@
+---
+name: example
+on:
+  push:
+    branches: [master]
+    tags: [v*]
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install akoi
+        uses: suzuki-shunsuke/akoi-installer@v0.1.0-1
+      - run: .akoi/bin/akoi --version
+
+      - name: Install akoi version v2.2.0
+        uses: suzuki-shunsuke/akoi-installer@v0.1.0-1
+        with:
+          version: 'v2.2.0'
+      - run: .akoi/bin/akoi --version
+
+      - name: Install akoi on dist/akoi
+        uses: suzuki-shunsuke/akoi-installer@v0.1.0-1
+        with:
+          path: dist/akoi
+      - run: dist/akoi --version
+
+      - name: Install akoi on dist/akoi version 2.2.0
+        uses: suzuki-shunsuke/akoi-installer@v0.1.0-1
+        with:
+          version: 'v2.2.0'
+          path: dist/akoi
+      - run: dist/akoi --version
