@@ -55,7 +55,7 @@ function run() {
                 recursive: true
             });
             const url = `https://github.com/suzuki-shunsuke/akoi/releases/download/${version}/akoi_${version.replace(/^v/, '')}_${process_1.platform}_amd64`;
-            core.info(`url: ${url}`);
+            core.info(`===> Downloading akoi ${url} ...`);
             const pipeline = util_1.promisify(stream_1.default.pipeline);
             yield pipeline(got_1.default.stream(url), fs.createWriteStream(installPath));
             yield fs.promises.chmod(installPath, 0o775);

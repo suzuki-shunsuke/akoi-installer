@@ -17,7 +17,7 @@ async function run(): Promise<void> {
       /^v/,
       ''
     )}_${platform}_amd64`
-    core.info(`url: ${url}`)
+    core.info(`===> Downloading akoi ${url} ...`)
     const pipeline = promisify(stream.pipeline)
     await pipeline(got.stream(url), fs.createWriteStream(installPath))
     await fs.promises.chmod(installPath, 0o775)
