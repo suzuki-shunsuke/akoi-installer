@@ -1,17 +1,15 @@
 name: 'Install akoi'
 description: 'Install suzuki-shunsuke/akoi'
+author: 'Shunsuke Suzuki'
 inputs:
   version:
     description: 'installed akoi version'
     required: false
-    default: ""
+    default: "v2.2.1"
   path:
     description: 'install path'
     required: false
-    default: ""
+    default: ".akoi/bin/akoi"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.version }}
-    - ${{ inputs.path }}
+  using: 'node12'
+  main: 'dist/index.js'
